@@ -32599,8 +32599,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1219542591}
   m_Layer: 0
-  m_Name: GroundCheck
-  m_TagString: Untagged
+  m_Name: m_groundSensor
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32668,8 +32668,10 @@ GameObject:
   - component: {fileID: 1277681013}
   - component: {fileID: 1277681012}
   - component: {fileID: 1277681011}
-  - component: {fileID: 1277681010}
-  - component: {fileID: 1277681015}
+  - component: {fileID: 1277681016}
+  - component: {fileID: 1277681017}
+  - component: {fileID: 1277681018}
+  - component: {fileID: 1277681019}
   m_Layer: 0
   m_Name: Fredrick
   m_TagString: Player
@@ -32677,23 +32679,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1277681010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277681009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4563e7132e395e84290eba7e89f92666, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player1Movement
-  rb: {fileID: 1277681012}
-  GroundCheck: {fileID: 1219542591}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!61 &1277681011
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32842,7 +32827,29 @@ Transform:
   - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1277681015
+--- !u!95 &1277681016
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277681009}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c2a5b7097b0fe44394328c0bdb9252e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 1
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1277681017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -32851,16 +32858,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 1277681009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79977a66fe0ee9145a8676f07942a8b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f5034bc83802944c9bca57c55e08978, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player
-  healthSystem:
-    maxHealth: 225
-    currentHealth: 225
-  contactDamage: 0
-  hitCooldown: 0
-  startingHealth: 225
-  healthBar: {fileID: 678418903}
+  m_EditorClassIdentifier: Assembly-CSharp::HeroKnight
+  m_speed: 4
+  m_jumpForce: 7.5
+  m_rollForce: 6
+  m_noBlood: 0
+  m_slideDust: {fileID: 0}
+--- !u!114 &1277681018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277681009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2a8bdc7f41b704693ad497097f30dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sensor_HeroKnight
+--- !u!114 &1277681019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277681009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4563e7132e395e84290eba7e89f92666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player1Movement
+  rb: {fileID: 1277681012}
+  GroundCheck: {fileID: 1219542591}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1335940854
 GameObject:
   m_ObjectHideFlags: 0
